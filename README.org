@@ -10,7 +10,7 @@ me learn some of the basics of PyTorch. It currently achieves an accuracy of
 84%, though this could definitely be improved in the future.
 
 * Usage
-First download the dataset from [[https://www.kaggle.com/tanliheng/hot-dog][Kaggle Dataset]] and save it to the "./data"
+First download the dataset from [[https://www.kaggle.com/tanliheng/hot-dog][Kaggle Dataset]] and save it to a "./data"
 folder. Then, just run each cell of the notebook consecutively. The model itself
 is also available in this repository, if you wish to use it in your own projects
 without retraining.

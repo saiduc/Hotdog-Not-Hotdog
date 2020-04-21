@@ -1,0 +1,37 @@
+#+TITLE: Hotdog or Not Hotdog Classifier Using PyTorch
+#+AUTHOR: Sai Pandian
+
+A very simple image classifier that can identify Hotdogs and Not Hotdogs. I made
+this for fun based on the HBO Series "Silicon Valley". The dataset is obtained
+from: 
+[[https://www.kaggle.com/tanliheng/hot-dog][Kaggle Dataset]]
+This is certainly not the most effective or efficient classifier, but it helped
+me learn some of the basics of PyTorch. It currently achieves an accuracy of
+84%, though this could definitely be improved in the future.
+
+* Usage
+First download the dataset from [[https://www.kaggle.com/tanliheng/hot-dog][Kaggle Dataset]] and save it to the "./data"
+folder. Then, just run each cell of the notebook consecutively. The model itself
+is also available in this repository, if you wish to use it in your own projects
+without retraining.
+
+* Requirements
+- PyTorch
+- Matplotlib
+- Numpy
+
+* Some Notes on What I Learned
+This was my first exploration of PyTorch. While I had some experience with ML
+libraries like ScikitLearn and I had never done any real Image
+Classification. I worked mainly from [[https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html][PyTorch Tutorial]], in order to develop an
+understanding for the theory, as well as become more familiar with the
+library. While this classifier is very simple and not well-optimised, it was
+definitely a good way to get started. In the future, I would like to learn more
+theory and delve into better-optimised classifiers.
+
+* License
+This project is licensed under the terms of the MIT license. Do whatever you want with it!
+
+* Acknowledgements
+- This is a great tutorial on the basics of PyTorch: [[https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html][PyTorch Tutorial]]
+

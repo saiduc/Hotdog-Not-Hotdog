@@ -17,6 +17,7 @@ without retraining.
 
 * Requirements
 - PyTorch
+- Torchvision
 - Matplotlib
 - Numpy
 

@@ -3,7 +3,7 @@
 
 * Loading the Images
 
-#+begin_src jupyter-python
+#+begin_src python
 import torch
 import torchvision
 import torchvision.transforms as transforms
@@ -11,7 +11,7 @@ import torchvision.transforms as transforms
 
 #+RESULTS:
 
-#+begin_src jupyter-python
+#+begin_src python
 # Normalise all the images
 transform = transforms.Compose([transforms.Resize((32,32)), transforms.ToTensor(), transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))])
 
@@ -30,7 +30,7 @@ classes = ('hotdog', 'nothotdog')
 
 * Displaying the Images
 
-#+begin_src jupyter-python
+#+begin_src python
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib
@@ -40,7 +40,7 @@ import matplotlib
 
 #+RESULTS:
 
-#+begin_src jupyter-python
+#+begin_src python
 def imshow(img):
     img = img / 2 + 0.5
     npimg = img.numpy()
@@ -63,7 +63,7 @@ print(' '.join('%5s' % classes[label] for label in labels))
 
 * Constructing the CNN
 
-#+begin_src jupyter-python
+#+begin_src python
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -93,7 +93,7 @@ net = Net()
 
 * Training the Network
 
-#+begin_src jupyter-python
+#+begin_src python
 import torch.optim as optim
 
 criterion = nn.CrossEntropyLoss()
@@ -102,7 +102,7 @@ optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
 #+RESULTS:
 
-#+begin_src jupyter-python
+#+begin_src python
 from time import time
 
 epochs = 60
@@ -195,7 +195,7 @@ Epoch 59 - Training loss: 0.00030383143924737866
 Training Time (in minutes):  7.782852784792582
 #+end_example
 
-#+begin_src jupyter-python
+#+begin_src python
 PATH = './hotdog.pth'
 torch.save(net.state_dict(), PATH)
 #+end_src
@@ -204,7 +204,7 @@ torch.save(net.state_dict(), PATH)
 
 * Testing the Model
 
-#+begin_src jupyter-python
+#+begin_src python
 dataiter = iter(testloader)
 images, labels = dataiter.next()
 
@@ -226,7 +226,7 @@ print("Predicted: ", " ".join("%5s" % classes[predict] for predict in predicted)
 :END:
 #+RESULTS:
 
-#+begin_src jupyter-python
+#+begin_src python
 correct = 0
 total = 0
 with torch.no_grad():

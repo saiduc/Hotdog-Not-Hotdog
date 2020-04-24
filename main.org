@@ -1,6 +1,8 @@
 #+TITLE: Hotdog or Not Hotdgog Classifier
 #+AUTHOR: Sai Pandian
 
+* Loading the Images
+
 #+begin_src jupyter-python
 import torch
 import torchvision
@@ -10,20 +12,23 @@ import torchvision.transforms as transforms
 #+RESULTS:
 
 #+begin_src jupyter-python
-# transform = transforms.Compose([transforms.Grayscale(), transforms.Resize((256,256)), transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
-
+# Normalise all the images
 transform = transforms.Compose([transforms.Resize((32,32)), transforms.ToTensor(), transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))])
 
+# Load the images into train and test sets
 trainset = torchvision.datasets.ImageFolder('./data/train', transform=transform)
 trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
 
 testset = torchvision.datasets.ImageFolder('./data/test', transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=True, num_workers=2)
 
+# The two possible labels
 classes = ('hotdog', 'nothotdog')
 #+end_src
 
 #+RESULTS:
+
+* Displaying the Images
 
 #+begin_src jupyter-python
 import matplotlib.pyplot as plt
@@ -52,9 +57,11 @@ print(' '.join('%5s' % classes[label] for label in labels))
 
 #+RESULTS:
 :RESULTS:
-[[file:./.ob-jupyter/a3805b07afc54f0564cd5987f88ee9dc9b33cac3.png]]
-: nothotdog nothotdog nothotdog nothotdog
+[[file:./.ob-jupyter/fe86313d5f0dddcf88161a12e7b37610f1f77a70.png]]
+: nothotdog hotdog hotdog nothotdog
 :END:
+
+* Constructing the CNN
 
 #+begin_src jupyter-python
 import torch.nn as nn
@@ -84,6 +91,7 @@ net = Net()
 
 #+RESULTS:
 
+* Training the Network
 
 #+begin_src jupyter-python
 import torch.optim as optim
@@ -194,6 +202,8 @@ torch.save(net.state_dict(), PATH)
 
 #+RESULTS:
 
+* Testing the Model
+
 #+begin_src jupyter-python
 dataiter = iter(testloader)
 images, labels = dataiter.next()
@@ -232,4 +242,4 @@ print('Accuracy of the network on the test images: %d %%' % (
 #+end_src
 
 #+RESULTS:
-: Accuracy of the network on the test images: 85 %
+: Accuracy of the network on the test images: 84 %

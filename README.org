@@ -24,7 +24,7 @@ without retraining.
 
 * Some Notes on What I Learned
 This was my first exploration of PyTorch. While I had some experience with ML
-libraries like ScikitLearn and I had never done any real Image
+libraries like ScikitLearn, I had never done any real Image
 Classification. I worked mainly from [[https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html][PyTorch Tutorial]], in order to develop an
 understanding for the theory, as well as become more familiar with the
 library. While this classifier is very simple and not well-optimised, it was
